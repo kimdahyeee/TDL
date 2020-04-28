@@ -2,7 +2,7 @@
 
 ---
 
-![](./images/http-message.jpg)
+![](../images/http-message.jpg)
 
 ✔ `시작줄`과 `헤더`는 줄 단위로 분리된 ascii 문자열
 
