@@ -10,6 +10,7 @@
 - [보조 스트림](posts/java-보조%20스트림.md)
 - [중첩 클래스](posts/java-중첩클래스.md)
 - [localClass와 final](posts/java-local%20class와%20final.md)
+- [람다식](posts/java8-람다식.md)
 
 #### http
 - [HTTP 메시지](./http-HTTP%20메시지.md)
