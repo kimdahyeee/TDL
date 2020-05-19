@@ -12,5 +12,6 @@
 - [localClass와 final](posts/java-local%20class와%20final.md)
 - [람다식](posts/java8-람다식.md)
 
-#### http
-- [HTTP 메시지](./http-HTTP%20메시지.md)
+#### 네트워크
+- [HTTP 메시지](posts/http-HTTP%20메시지.md)
+- [DNS](posts/network-DNS.md)
