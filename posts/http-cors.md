@@ -1,19 +1,19 @@
-### CORS (Cross-Origin Resource Sharing)
+# CORS (Cross-Origin Resource Sharing)
 
 > 💡 `CORS`는 보안에 반하는 정책이다.
 > 보안을 위해 내놓은 정책(cross-origin 을 허용하지 않는 것)을 무시하기 위한 매커니즘이다.
 
 - `CORS` 는 W3C 에서 내놓은 정책이다.
-- **브라우저**가 **한 출처(origin)**에서 **다른 출처(cross-origin)**의 리소스를 엑세스하도록 지시하는 메커니즘이다.
+- **브라우저**가 **한 출처(origin)** 에서 **다른 출처(cross-origin)** 의 리소스를 엑세스하도록 지시하는 메커니즘이다.
     - 기본적으로 같은 origin은 허용한다.
 
-#### `same-origin`과 `cross-origin`
+## `same-origin`과 `cross-origin`
 먼저 `origin`이란 특정 사이트의 `URL`이다.
 
 **Scheme(프로토콜), host(도메인), port(포트)** 기준으로 `same-orgin`과 `cross-origin`을 구분할 수 있다.
 모두 같으면 `same-origin`, 하나라도 다르면 `cross-origin`이다.
 
-#### `CORS`를 사용하는 요청
+## `CORS`를 사용하는 요청
 아래와 같은 케이스가 있다고만 알아두자.
 
 1. XmlHttpRequest와 Fetch Apis 호출하는 경우
@@ -25,7 +25,7 @@
 
 자세히 알고싶다면, [참고 사이트](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)를 확인하자. 
 
-#### `CORS` 동작 방식
+## `CORS` 동작 방식
 > `CORS` 동작 방식은 `Simple Request`와 `Preflight Requests` 로 나누어진다.
 
 **🤔 어떤 기준으로 방식이 나누어질까?**
@@ -48,7 +48,7 @@
 
 **위의 그림은 아주 간단히 그린 것! 아래의 참고 사이트에 아주 친~절히 설명되어있다 😊👏**
 
-#### 참고
+## 참고
 - [왜 모르는가? - CORS 정책](https://vvshinevv.tistory.com/60?category=861457)
 - [왜 모르는가? - CORS 이슈 해결](https://vvshinevv.tistory.com/61?category=861457)
 - [모질라 - CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
