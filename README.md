@@ -15,3 +15,4 @@
 #### 네트워크
 - [HTTP 메시지](posts/http-HTTP%20메시지.md)
 - [DNS](posts/network-DNS.md)
+- [CORS](posts/http-cors.md)
