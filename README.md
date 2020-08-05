@@ -11,6 +11,7 @@
 - [중첩 클래스](posts/java-중첩클래스.md)
 - [localClass와 final](posts/java-local%20class와%20final.md)
 - [람다식](posts/java8-람다식.md)
+- [예외](posts/java-예외.md)
 
 #### 네트워크
 - [HTTP 메시지](posts/http-HTTP%20메시지.md)
