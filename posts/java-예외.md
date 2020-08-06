@@ -10,6 +10,10 @@
 - `unchecked exception`은 프로그램에서 잡을 필요가 없거나 혹은 통상적으로 잡지 말아야 한다.
 - 어떤 예외를 사용할 지 확신하기 어렵다면 `unchecked exception`을 선택하는 편이 낫다.
 
+> **clean code 133p, unchecked Exception을 사용하라**
+> 
+> throws 경로에 위치하는 모든 함수가 최하위 함수에서 던지는 예외를 알아야 하므로 **캡슐화**가 깨진다.
+
 #### item 71. 필요없는 `checked exception` 사용을 피하라
 - `checked exception`은 발생한 문제를 프로그래머가 처리하여 안정성을 높이게 해주지만, 남용하면 쓰기 고통스러운 API를 낳는다.
 - API 호출자가 예외 상황에서 복구할 방법이 없다면 `unchecked exception`을 던지자.
@@ -24,6 +28,15 @@
 - 실패의 순간을 포착하려면 발생한 예외에 관련된 모든 매개변수와 필드의 값을 실패 메시지에 담아야한다.
 - 단, 사용자에게 보여질 메시지와 예외의 상세 메시지를 구분할 필요가 있다. (방법은 ?)
 
+#### item 76. 가능 한 실패 원자적으로 만들라
+- 가장 간단한 방법은 불변 객체를 설계하는 것이다.
+- 예외가 발생하더라도 객체의 상태는 메서드 호출 전과 똑같이 유지돼야 한다는 의미이다.
+
+#### item 77. 예외를 무시하지 말라
+
+#### clean code 138p~ null을 반환/전달하지 말라
+- `NullPointerException` 에서 벗어나지 못한다 !
 
 #### 참고
-effective java 3/E
+- effective java 3/E
+- clean code
