@@ -17,3 +17,6 @@
 - [HTTP 메시지](posts/http-HTTP%20메시지.md)
 - [DNS](posts/network-DNS.md)
 - [CORS](posts/http-cors.md)
+
+#### Spring
+- [Spring Batch guide - 기록보단 기억을 blog](https://jojoldu.tistory.com/324?category=902551)
