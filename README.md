@@ -25,3 +25,4 @@
 #### javascript
 - [모던 JavaScript 튜토리얼](https://ko.javascript.info/)
 - [세미콜론 생략 시 주의사항](posts/javascript-semicolon.md)
+- [변수와 상수](posts/javascript-let-const.md)
