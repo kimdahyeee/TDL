@@ -22,6 +22,7 @@
 #### Spring
 - [Spring Batch guide - 기록보단 기억을 blog](https://jojoldu.tistory.com/324?category=902551)
 - [빈 주입 시 인터페이스가 있다면 인터페이스를 쓰자](posts/spring-interface-bean.md)
+- [인터페이스 기반 빈 주입](posts/spring-interface-bean-injection.md)
 
 #### javascript
 - [모던 JavaScript 튜토리얼](https://ko.javascript.info/)
