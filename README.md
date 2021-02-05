@@ -20,7 +20,7 @@
 - [apache tomcat](https://www.lesstif.com/linux-infra-book/%EC%95%84%ED%8C%8C%EC%B9%98-%EC%9B%B9-%EC%84%9C%EB%B2%84%EC%99%80-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-20776817.html)
 
 #### Spring
-- [Spring Batch guide - 기록보단 기억을 blog](https://jojoldu.tistory.com/324?category=902551)
+- [Spring Batch](posts/spring-batch.md)
 - [빈 주입 시 인터페이스가 있다면 인터페이스를 쓰자](posts/spring-interface-bean.md)
 - [인터페이스 기반 빈 주입](posts/spring-interface-bean-injection.md)
 
