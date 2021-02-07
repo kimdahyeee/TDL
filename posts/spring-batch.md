@@ -36,9 +36,38 @@
 
 Spring batch는 기본적으로 Exit status의 exitcode 는 Step의 Batch status 와 같도록 설정되어있다.
 
-### spring batch scope
+### spring batch scope & JobParameter
+두 어노테이션은 bean 생성 시점을 singleton scope 가 아닌 scope가 실행되는 시점으로 생성을 지연시킨다.
 
+- `@JobScope` : step 선언 문에서 사용
+    - Job 실행 시점에 bean 이 생성된다.
+- `@StepScope` : tasklet 이나 ItemReader, ItemWriter, ItemProcessor 에서 사용
+    - step 실행 시점에 해당 컴포넌트를 spring bean 으로 생성한다.
 
+**bean 의 생성 시점을 어플리케이션 실행 시점이 아닌, step 혹은 job의 실행 시점으로 지연시키면서 얻는 장점**
+1. `JobParameter`의 late binding 가능
+    - 어노테이션으로 jobParameter 를 받을 수 있다.
+2. 동일한 컴포넌트를 병렬 혹은 동시에 사용할 때 유용
+    - 다른 tasklet 이 서로의 상태에 침범할 일이 없음
+    
+**jobParameter 를 사용해야하는 이유**
+1. spring batch 가 지원하는 기능을 사용할 수 있다.
+    - spring batch 는 같은 JobParameter 로 같은 job 을 두 번 실행하지 않는다.
+    - 즉, 메타 테이블로 관리된다.
+2. JobParameter를 이용하면 job 을 수행하기 간편하다.
+    - 테스트 코드도 지원
+3. late binding 을 지원한다.
+    - 개발자가 원하는 어느 타이밍이든 jobParameter 를 생성하고, job 을 수행할 수 있다.
+
+### chunk
+chunk 지향 처리란 한 번에 하나씩 데이터를 읽어 Chunk 라는 덩어리를 만든 뒤, Chunk 단위로 트랜잭션을 다루는 것을 말한다.
+![](../images/chunk-oriented-processing.png)
+- reader 에서 데이터를 읽어온다.
+- proccesor 를 통해 데이터를 가공한다.
+- 위의 프로세스 를 통해 처리된 데이터를 별도의 공간에 모아둔다.
+- 위의 데이터가 chunk 단위 만큼 쌓이게 되면, Writer 에 전달하고 일괄 저장한다.
+
+**reader, processor 에서는 1 건씩 다뤄지고, writer 에서는 chunk 단위로 처리된다.**
 
 ### 배치 작성 시 주의 사항
 - 가능하면 한 번에 데이터를 조회하여, 메모리에 저장해두고 처리를 한 후 데이터베이스에 저장하는 것이 좋다. (chunk 단위를 잘 이해해야 한다.)
@@ -47,3 +76,4 @@ Spring batch는 기본적으로 Exit status의 exitcode 는 Step의 Batch status
 - [https://jojoldu.tistory.com/324?category=902551](https://jojoldu.tistory.com/324?category=902551)
 - [https://cheese10yun.github.io/spring-batch-basic/](https://cheese10yun.github.io/spring-batch-basic/)
 - [https://docs.spring.io/spring-batch/docs/4.3.x/reference/html/schema-appendix.html#metaDataSchema](https://docs.spring.io/spring-batch/docs/4.3.x/reference/html/schema-appendix.html#metaDataSchema)
+- [https://docs.spring.io/spring-batch/docs/4.0.x/reference/html/index-single.html#chunkOrientedProcessing](https://docs.spring.io/spring-batch/docs/4.0.x/reference/html/index-single.html#chunkOrientedProcessing)
