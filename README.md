@@ -33,3 +33,6 @@
 - [세미콜론 생략 시 주의사항](posts/javascript-semicolon.md)
 - [변수와 상수](posts/javascript-let-const.md)
 - [null vs undefined](posts/javascript-null-undefined.md)
+
+#### database
+- [mysql-sql joins](images/sql_join.png)
