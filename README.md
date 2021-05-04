@@ -13,6 +13,7 @@
 - [람다식](posts/java8-람다식.md)
 - [예외](posts/java-예외.md)
 - [thin clone vs deep clone](posts/java-thin%20clone%20vs%20deep%20clone.md)
+- [Call by Value vs Call by Reference](posts/java-CallByValue%20vs%20CallByReference.md)
 
 #### 네트워크
 - [HTTP 메시지](posts/http-HTTP%20메시지.md)
