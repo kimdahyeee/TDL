@@ -16,6 +16,8 @@
 - [thin clone vs deep clone](posts/java-thin%20clone%20vs%20deep%20clone.md)
 - [Call by Value vs Call by Reference](posts/java-CallByValue%20vs%20CallByReference.md)
 
+### [디자인패턴](posts/designPattern.md)
+
 #### 네트워크
 - [HTTP 메시지](posts/http-HTTP%20메시지.md)
 - [DNS](posts/network-DNS.md)
