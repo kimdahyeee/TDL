@@ -15,6 +15,7 @@
 - [예외](posts/java-예외.md)
 - [thin clone vs deep clone](posts/java-thin%20clone%20vs%20deep%20clone.md)
 - [Call by Value vs Call by Reference](posts/java-CallByValue%20vs%20CallByReference.md)
+- [직렬화와 역직렬화](posts/java-serializable%20and%20deserializable.md)
 
 ### [디자인패턴](posts/designPattern.md)
 
