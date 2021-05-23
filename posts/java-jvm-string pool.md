@@ -34,10 +34,10 @@ new 연산자를 통해 생성하면, `string pool` 영역이 아닌 `heap` 영�
 따라서, 리터럴 생성과 참조 값이 같지 않다.
 
 **TMI**
-java 6 버전까지는 `permGen` 영역에 저장되어, `String pool` 에 문자열 객체가 많이 생성되면 `outOfMemory` 에러가 발생
-(`permGen` 영역은 runtime 중 메모리를 동적으로 늘릴 수 없음)
+java 6 버전까지는 `permGen` 영역에 저장되어, 문자열 객체가 많이 생성되면 `outOfMemory` 에러가 발생
+(`permGen` 영역은 runtime 중 메모리를 동적으로 늘릴 수 없음, GC 대상 영역도 아님!)
 
-java7 부터는 `permGen` 영역이 아닌 `heap` 에 `string pool` 생성하여 `OOM` 이슈 위험성 적어짐
+java7 부터는 `permGen` 영역이 아닌 `heap` 에 `string pool` 생성하여 [`OOM`](https://github.com/kimdahyeee/TDL/blob/main/posts/java-jvm,%20jre,%20jdk.md#heap-%EC%98%81%EC%97%AD%EA%B3%BC-garbage-collector) 이슈 위험성 적어짐
 
 ### 참고
 - [https://dololak.tistory.com/718](https://dololak.tistory.com/718)

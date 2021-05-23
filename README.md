@@ -6,6 +6,7 @@
 - [멤버 클래스는 되도록 static으로 만들자](posts/EffectiveJava-멤버%20클래스는%20되도록%20static으로%20만들라.md)
 - [interface의 default method](posts/java8-interface%20default%20method.md)
 - [jvm & jre & jdk](posts/java-jvm,%20jre,%20jdk.md)
+- [String vs StringBuffer vs StringBuilder](posts/java-String%20vs%20StringBuffer%20vs%20StringBuilder.md)
 - [string 과 JVM 의 string pool](posts/java-jvm-string%20pool.md)
 - [입력스트림과 출력스트림](posts/java-입력스트림과%20출력스트림.md)
 - [보조 스트림](posts/java-보조%20스트림.md)
@@ -17,7 +18,7 @@
 - [Call by Value vs Call by Reference](posts/java-CallByValue%20vs%20CallByReference.md)
 - [직렬화와 역직렬화](posts/java-serializable%20and%20deserializable.md)
 
-### [디자인패턴](posts/designPattern.md)
+#### [디자인패턴](posts/designPattern.md)
 
 #### 네트워크
 - [HTTP 메시지](posts/http-HTTP%20메시지.md)
