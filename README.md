@@ -18,6 +18,7 @@
 - [Call by Value vs Call by Reference](posts/java-CallByValue%20vs%20CallByReference.md)
 - [직렬화와 역직렬화](posts/java-serializable%20and%20deserializable.md)
 - [==, equals(), hashcode()](posts/java-equals%20hashcode.md)
+- [collection 과 map](posts/java-collection과%20map.md)
 
 #### [디자인패턴](posts/designPattern.md)
 
@@ -43,3 +44,6 @@
 
 #### database
 - [mysql-sql joins](images/sql_join.png)
+
+### 기타
+- [병목 지점 파악하기](posts/etc-병목지점%20파악하기.md)
