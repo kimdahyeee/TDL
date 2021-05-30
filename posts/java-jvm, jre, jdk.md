@@ -1,4 +1,4 @@
-### JVM, JRE, JDK
+# JVM, JRE, JDK
 
 ---
 
@@ -6,7 +6,7 @@
 
 - 참고로 `java 11` 에서 부터는 `JDK`만 제공한다. (`JRE`를 따로 제공하지 않음)
 
-### JVM 구조
+## JVM 구조
 - java source (.java 파일)은 **java compiler**에 의해 java byte code(.class 파일) 이 생성된다.
 - 이 과정을 통해 생성된 바이트 코드와 class library 를 기반으로 **class loader** 가 클래스 로드한다.
 ![](../images/java-jvm.jpg)
@@ -18,7 +18,7 @@ JVM 메모리 영역 (JVM 이 운영체제 위에서 실행되는 시점에 메�
 ### heap 영역과 garbage collector
 garbage collector 는 동적으로 할당한 메모리 영역 중 사용하지 않는 영역을 탐지하고 해제하는 역할을 수행
 
-**garbage collector 과정**
+#### garbage collector 과정
 - statck 의 모든 변수를 스캔하면서 각각 어떤 객체를 참조하고 있는 지 찾아서 마킹
 - reachable object 가 참조하고 있는 객체도 찾아서 마킹
 - 사용하지 않는 객체 삭제
@@ -38,13 +38,13 @@ garbage collector 는 동적으로 할당한 메모리 영역 중 사용하지 �
 **major GC 발생**
 - old generation 이 꽉 차면, **full GC (major GC)** 발생
 
-**OutOfMemory(OOM)**
+### OutOfMemory(OOM)
 - garbage collector 가 새로운 object 를 유지하기 위해 새로운 공간을 확보하지 못할 때 발생
   - heap size 부족한 경우
   - permanent area 가 가득 차면 outOfMemory 발생
   - memory leak 에 의해
 
-**java8 에서 perm 이 사라지고 metaspace 가 추가된 이유 ?**
+#### java8 에서 perm 이 사라지고 metaspace 가 추가된 이유 ?
 perm 영역은 JVM heap 에서 관리되는 영역이었기 때문에 메모리의 한계가 존재 => 개발자의 실수로 OOM 이 발생할 수 있음
 
 metaspace 로 변경되며 OS 레벨에서 관리되는 native 영역으로 이동 => 영역에 대한 사이즈가 perm 영역보다 훨씬 크다.
