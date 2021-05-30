@@ -39,7 +39,10 @@ garbage collector 는 동적으로 할당한 메모리 영역 중 사용하지 �
 - old generation 이 꽉 차면, **full GC (major GC)** 발생
 
 **OutOfMemory(OOM)**
-- permanent area 가 가득 차면 outOfMemory 발생
+- garbage collector 가 새로운 object 를 유지하기 위해 새로운 공간을 확보하지 못할 때 발생
+  - heap size 부족한 경우
+  - permanent area 가 가득 차면 outOfMemory 발생
+  - memory leak 에 의해
 
 **java8 에서 perm 이 사라지고 metaspace 가 추가된 이유 ?**
 perm 영역은 JVM heap 에서 관리되는 영역이었기 때문에 메모리의 한계가 존재 => 개발자의 실수로 OOM 이 발생할 수 있음
@@ -48,3 +51,5 @@ metaspace 로 변경되며 OS 레벨에서 관리되는 native 영역으로 이�
 
 ### 참고
 - [https://hoonmaro.tistory.com/19](https://hoonmaro.tistory.com/19)
+- [outOfMemoryError 관련 포스팅](https://www.nextree.co.kr/p3878/)
+- [https://changrea.io/java/oom-issue/](https://changrea.io/java/oom-issue/) :: 읽어보기!
