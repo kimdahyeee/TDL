@@ -44,6 +44,10 @@ garbage collector 는 동적으로 할당한 메모리 영역 중 사용하지 �
   - permanent area 가 가득 차면 outOfMemory 발생
   - memory leak 에 의해
 
+### permanent area
+- 클래스의 메타 데이터 정보 저장
+- `Class` 클래스를 통해 클래스를 동적으로 생성하는 경우 (`reflection` 사용하는 경우)
+
 #### java8 에서 perm 이 사라지고 metaspace 가 추가된 이유 ?
 perm 영역은 JVM heap 에서 관리되는 영역이었기 때문에 메모리의 한계가 존재 => 개발자의 실수로 OOM 이 발생할 수 있음
 
