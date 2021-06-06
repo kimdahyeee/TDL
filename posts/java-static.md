@@ -34,6 +34,10 @@
 
    `ArrayList` 나 `Vector` 와 같은 `Collection` 객체를 `static` 선언한다면, `OutOfMemoryError` 가 발생할 수 있다.
 
+4. 항상 변하는 값에 대해서는 `static` 으로 선언하면 안된다.
+
+   변하는 값에 `static` 을 사용한다면, 스레드 간의 동기화를 주의해야 한다. (해당 값에 접근하는 메서드에 `synchronized` 선언 필요)
+
 ### **메모리 릭**이란 ?
 더 이상 사용 가능한 메모리가 없어지는 현상
 
