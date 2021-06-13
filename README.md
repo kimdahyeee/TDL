@@ -22,6 +22,7 @@
 - [collection 과 map](posts/java-collection과%20map.md)
 - [프로세스 vs 스레드](posts/java-process%20vs%20thread.md)
 - [synchronized](posts/java-synchronized.md)
+- [로그를 잘 남기자](posts/java-log.md)
 
 #### [디자인패턴](posts/designPattern.md)
 
