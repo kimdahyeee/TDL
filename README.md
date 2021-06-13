@@ -49,6 +49,7 @@
 #### database
 - [mysql-sql joins](images/sql_join.png)
 - [connection pool](posts/database-connection%20pool.md)
+- [Statement vs PrepareStatement](posts/database-statement%20vs%20prepareStatement.md)
 
 ### 기타
 - [병목 지점 파악하기](posts/etc-병목지점%20파악하기.md)
