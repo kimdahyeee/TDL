@@ -52,4 +52,5 @@
 - [Statement vs PrepareStatement](posts/database-statement%20vs%20prepareStatement.md)
 
 ### 기타
+- [웹서버(apache) 역할](posts/etc-web%20server.md)
 - [병목 지점 파악하기](posts/etc-병목지점%20파악하기.md)
