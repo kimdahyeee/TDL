@@ -14,6 +14,8 @@
 ### runtime data area
 JVM 메모리 영역 (JVM 이 운영체제 위에서 실행되는 시점에 메모리 영역 할당!)
 ![](../images/java-runtime-data-area.jpg)
+- heap memory : 클래스 인스턴스, 배열 등, **공유 메모리**라고도 부른다. (여러 스레드에서 공유되는 데이터들 저장)
+- 네이티브 메서드 스택 : 자바 코드가 아닌 다른 언어로 된(보통 C 코드) 코드들이 실행하게 될 때의 스택 정보 관리
 
 ### heap 영역과 garbage collector
 garbage collector 는 동적으로 할당한 메모리 영역 중 사용하지 않는 영역을 탐지하고 해제하는 역할을 수행
@@ -23,10 +25,15 @@ garbage collector 는 동적으로 할당한 메모리 영역 중 사용하지 �
 - reachable object 가 참조하고 있는 객체도 찾아서 마킹
 - 사용하지 않는 객체 삭제
 
+> GC 를 개발자가 임의로 하지 말자. (특히 웹 기반의 시스템에서는)
+> 
+> 성능히 현저하게 안좋아질 수 있다.
+
 ![](../images/java-jvm-heap.jpg)
 **minor GC 발생**
 - eden 영역이 꽉 차면, minor GC 발생
 - eden 영역의 reachable 객체는 survivor 0 으로 옮겨진다.
+  - 이 때, 객체의 크기가 아주 큰 경우엔 바로 **old** 영역으로 이동
 - eden 영역의 unreachable 객체는 메모리에서 해제
 - 반~복 (eden 이 차면 -> survivor 0 이 채워짐)
 - survivor 0 이 다 차게됨
@@ -38,11 +45,16 @@ garbage collector 는 동적으로 할당한 메모리 영역 중 사용하지 �
 **major GC 발생**
 - old generation 이 꽉 차면, **full GC (major GC)** 발생
 
+### StackOverflowError
+스택의 크기는 고정적이거나 가변적일 수 있다. 연산을 하다가 JVM의 스택 크기의 최대치를 넘어섰을 경우에는 `StackOverflowError`가 발생한다.
+
 ### OutOfMemory(OOM)
+가변적으로 스택의 크기를 늘리려고 할 때 메모리가 부족하거나, 스레드를 생성할 때 메모리가 부족한 경우 발생한다.
 - garbage collector 가 새로운 object 를 유지하기 위해 새로운 공간을 확보하지 못할 때 발생
   - heap size 부족한 경우
   - permanent area 가 가득 차면 outOfMemory 발생
   - memory leak 에 의해
+`OutOfMemoryError`가 발생하면 JVM 이 다운된다.
 
 ### permanent area
 - 클래스의 메타 데이터 정보 저장
