@@ -42,3 +42,4 @@ public class Main {
 
 ### 참고
 - [https://github.com/WeareSoft/tech-interview/blob/master/contents/java.md#call-by-reference%EC%99%80-call-by-value%EC%9D%98-%EC%B0%A8%EC%9D%B4](https://github.com/WeareSoft/tech-interview/blob/master/contents/java.md#call-by-reference%EC%99%80-call-by-value%EC%9D%98-%EC%B0%A8%EC%9D%B4)
+- [https://mangkyu.tistory.com/107](https://mangkyu.tistory.com/107) :: 읽어보기!
