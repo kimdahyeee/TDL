@@ -86,4 +86,9 @@ Content-Type: media-type
 Content-Type: text/html; charset=utf-8
 ```
 
+- `GET` url 쿼리 파라미터 형식으로 데이터를 전달할 경우 http 메시지 바디를 사용하지 않기 때문에 `content-type` 이 없다.
+- `POST` html form 형식으로 데이터를 전달하는 경우 `application/x-www-form-urlencoded` 가 사용된다.
+
+> 메시지 바디에 데이터가 포함되는 경우 반드시 `content-type`이 정의되어야 한다.
+
 📢 참고: HTTP 완벽 가이드
