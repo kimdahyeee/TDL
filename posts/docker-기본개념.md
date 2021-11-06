@@ -93,6 +93,25 @@ $ docker run -p 80:80 httpd
 // 80:80 = host의 포트번호:컨테이너의 포트번호
 ```
 
+### 이미지 커스터마이징 (`commit`)
+컨테이너에 변경이 일어났을 때 변경사항과 함께 새로운 image 로 저장하여 재사용 할 수 있다.
+
+```
+// ubntu image 실행
+$ docker run -it --name my-ubuntu ubuntu bash
+# apt update && apt install git // git 설치
+
+/// 현재 컨테이너 my-ubuntu 에는 ubuntu 에 git 이 설치되어 있음
+
+// commit (my-ubuntu 이미지를 dahye repository 의 ubuntu-git 이라는 이미지 생성
+$ docker commit my-ubuntu dahye:ubuntu-git
+
+// ps 결과
+$ ps
+CONTAINER ID   IMAGE                  COMMAND              CREATED              STATUS                          PORTS     NAMES
+3cb45517c842   dahye:my-ubuntu-git2   "bash"               15 seconds ago       Exited (1) 12 seconds ago                 my-ubuntu-git
+```
+
 ### 컨테이너 명령어 수행
 실행중인 컨테이너 내부에서 command 를 수행할 수 있다.
 
@@ -114,3 +133,4 @@ $ docker container exec -it {컨테이너 names} /bin/bash
 
 [https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/](https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/)
 [https://docs.docker.com/engine/reference/run/](https://docs.docker.com/engine/reference/run/)
+[https://www.44bits.io/ko/post/building-docker-image-basic-commit-diff-and-dockerfile#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0](https://www.44bits.io/ko/post/building-docker-image-basic-commit-diff-and-dockerfile#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0)
