@@ -95,36 +95,46 @@ $ docker run -p 80:80 httpd
 
 ### 이미지 커스터마이징 (`commit`)
 컨테이너에 변경이 일어났을 때 변경사항과 함께 새로운 image 로 저장하여 재사용 할 수 있다.
+![img_1.png](../images/docker-commit.jpeg)
 
-```
-// ubntu image 실행
-$ docker run -it --name my-ubuntu ubuntu bash
-# apt update && apt install git // git 설치
+**example ..**
+1. ubuntu image 실행 및 내부 컨테이너 내용 변경 (git 설치)
+    ```
+    $ docker run -it --name my-ubuntu ubuntu bash
+    # apt update && apt install git // git 설치
+    ```
 
-/// 현재 컨테이너 my-ubuntu 에는 ubuntu 에 git 이 설치되어 있음
+2. `commit` 하여 신규 이미지로 저장
+    ```
+    // my-ubuntu 이미지를 dahye repository 의 ubuntu-git 이라는 이미지 생성
+    $ docker commit my-ubuntu dahye:ubuntu-git
+    ```
 
-// commit (my-ubuntu 이미지를 dahye repository 의 ubuntu-git 이라는 이미지 생성
-$ docker commit my-ubuntu dahye:ubuntu-git
-
-// ps 결과
-$ ps
-CONTAINER ID   IMAGE                  COMMAND              CREATED              STATUS                          PORTS     NAMES
-3cb45517c842   dahye:my-ubuntu-git2   "bash"               15 seconds ago       Exited (1) 12 seconds ago                 my-ubuntu-git
-```
+3. docker images 결과
+    ```
+    $ docker images
+    REPOSITORY   TAG              IMAGE ID       CREATED          SIZE
+    dahye        my-ubuntu-git2   f5fd7d3ce2e9   17 minutes ago   206MB
+    ```
 
 ### 컨테이너 명령어 수행
 실행중인 컨테이너 내부에서 command 를 수행할 수 있다.
 
 ```
 $ docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
-
-// wc1 (container names), ls 쉘 명령어
-$ docker container exec wc1 ls
-
-// 이 때, /bin/bash 은 쉘 실행
-// /bin/bash 를 지원하지 않는 컨테이너는 /bin/sh 실행
-$ docker container exec -it {컨테이너 names} /bin/bash
 ```
+
+**example ..**
+1. 대상 컨테이너를 지정하여 쉘 명령어 실행
+   ```
+   // wc1 (container names), ls 쉘 명령어
+   $ docker container exec wc1 ls
+   ```
+2. 이미 실행중인 컨테이너의 쉘 실행
+   ```
+   // /bin/bash 를 지원하지 않는 컨테이너는 /bin/sh 실행
+   $ docker container exec -it {컨테이너 names} /bin/bash
+   ```
 
 명령어를 지속가능한 환경에서 수행하기 위해서는 `-it` 옵션
 
