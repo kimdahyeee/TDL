@@ -79,7 +79,7 @@ $ docker images
 
 8. 이미지 삭제
 ```
-$ docker rmi {이미지 names}
+$ docker rmi [--force] {이미지 names}
 ```
 
 ### 도커의 port forwarding
@@ -116,6 +116,27 @@ $ docker run -p 80:80 httpd
     REPOSITORY   TAG              IMAGE ID       CREATED          SIZE
     dahye        my-ubuntu-git2   f5fd7d3ce2e9   17 minutes ago   206MB
     ```
+   
+4. 원격 저장소에 `push` 하는 경우
+```
+// ghrc.io 이미지 원격 저장소 (github)/계정이름/image repository:tag
+$ docker commit my-image ghrc.io/kimdahyeee/my-image:1.0
+```
+
+### 이미지 원격 저장소에 `push`
+이미지를 원격 저장소 (ex. docker hub) 에 `push`하여 사용할 수 있다.
+
+* 이 때, `hub.docker.com` 을 **레지스트리**라고 부른다.
+
+```
+$ docker push [OPTIONS] NAME[:TAG]
+```
+
+**example...**
+```
+$ docker push dahye/test:1.0
+```
+
 
 ### 컨테이너 명령어 수행
 실행중인 컨테이너 내부에서 command 를 수행할 수 있다.
