@@ -2,6 +2,21 @@
 
 도커는 **컨테이너 기반의 오픈소스 가상화 플랫폼**이다.
 
+리눅스 상에서 컨테이너 방식으로 **프로세스를 격리**해서 실행하고 관리할 수 있도록 도와준다.
+
+### 도커를 왜 사용해야할까 ?
+운영체제 환경에 구애받지 않고, 도커 명령어를 통해 (동일한 명령어로) 환경을 구성할 수 있다.
+
+**눈송이 서버**<br>
+모든 눈송이의 모습이 다르 듯, 여러 서버를 구성하면서 각각의 서버는 달라진다. (버전..)<br>
+이 때, "A 서버는 잘 되는데, B 서버는 왜 안돼" 와 같은 일이 벌어질 수 있다.
+
+**도커는 Dockerfile 기반으로 이미지를 생성하기 때문에, 같은 상태를 유지하기 쉽다.**<br>
+도커는 Dockerfile 기반으로 이미지를 생성하기 때문에, 같은 상태를 유지하기 쉽다.<br>
+Dockerfile 이 결국 서버 구성에 대한 문서 역할을 하기 때문에, 언제 실행하던 같은 상태를 유지할 수 있다.
+
+즉, 실행 시점에 상관 없이 구성 시점을 고정할 수 있다.
+
 ### 호스트란 ?
 컨테이너가 설치되는 운영체제
 
@@ -137,7 +152,6 @@ $ docker push [OPTIONS] NAME[:TAG]
 $ docker push dahye/test:1.0
 ```
 
-
 ### 컨테이너 명령어 수행
 실행중인 컨테이너 내부에서 command 를 수행할 수 있다.
 
@@ -161,7 +175,7 @@ $ docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
 
 ## 참고
-
 [https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/](https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/)
 [https://docs.docker.com/engine/reference/run/](https://docs.docker.com/engine/reference/run/)
 [https://www.44bits.io/ko/post/building-docker-image-basic-commit-diff-and-dockerfile#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0](https://www.44bits.io/ko/post/building-docker-image-basic-commit-diff-and-dockerfile#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0)
+[https://www.44bits.io/ko/post/why-should-i-use-docker-container#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0-%EC%99%9C-%EB%8F%84%EC%BB%A4docker%EB%A5%BC-%EC%8D%A8%EC%95%BC%ED%95%98%EB%82%98%EC%9A%94](https://www.44bits.io/ko/post/why-should-i-use-docker-container#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0-%EC%99%9C-%EB%8F%84%EC%BB%A4docker%EB%A5%BC-%EC%8D%A8%EC%95%BC%ED%95%98%EB%82%98%EC%9A%94)
