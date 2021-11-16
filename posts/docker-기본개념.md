@@ -173,6 +173,23 @@ $ docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
 명령어를 지속가능한 환경에서 수행하기 위해서는 `-it` 옵션
 
+### DockerFile & build
+
+**`build` 와 `commit` 의 차이는?**
+
+`commit`은 백업의 개념이다. (이미 만들어져 있는 컨테이너의 변경 점을 **백업**)<br>
+`build`는 생성의 개념이다. (DockerFile 에 정의된 것 토대로 이미지를 **생성**)
+
+**Dockerfile**
+- `RUN` : image 생성 시 반영
+- `CMD` : 컨테이너에 반영
+
+[sample 코드](../docker/test/Dockerfile)
+```
+$ cd ~/Project/TDL/docker/test/
+$ docker build -t web-server-build .
+$ docker run -p 8888:8000 --name web-server web-server-build
+```
 
 ## 참고
 [https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/](https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/)
