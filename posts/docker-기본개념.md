@@ -27,6 +27,8 @@ Dockerfile 이 결국 서버 구성에 대한 문서 역할을 하기 때문에,
 
 하나의 도커 호스트에 **여러개의 컨테이너**를 띄울 수 있다.
 
+> 컨테이너마다 고유한 공간을 가진다.
+
 ### 컨테이너를 사용함으로써 얻는 장점
 - 일관성있는 런타임 환경
 - 디스크 용량 절감
@@ -110,6 +112,8 @@ $ docker run -p 80:80 httpd
 
 ### 이미지 커스터마이징 (`commit`)
 컨테이너에 변경이 일어났을 때 변경사항과 함께 새로운 image 로 저장하여 재사용 할 수 있다.
+> 거의 사용하지 않고 `DockerFile`을 사용한다.
+
 ![img_1.png](../images/docker-commit.jpeg)
 
 **example ..**
@@ -181,12 +185,16 @@ $ docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
 `build`는 생성의 개념이다. (DockerFile 에 정의된 것 토대로 이미지를 **생성**)
 
 **Dockerfile**
-- `RUN` : image 생성 시 반영
+- `FROM <image name>` : 커스텀 이미지의 기반이 되는 이미지 이름 지정
+- `RUN <command>` : image 생성 시 반영
 - `CMD` : 컨테이너에 반영
 
 [sample 코드](../docker/test/Dockerfile)
 ```
 $ cd ~/Project/TDL/docker/test/
+
+// t 옵션은 web-server-build 라는 이미지 이름 지정하는 명령어
+// 특별한 이유가 없다면 DockerFile 위치에서 해당 명령어 실행
 $ docker build -t web-server-build .
 $ docker run -p 8888:8000 --name web-server web-server-build
 ```
