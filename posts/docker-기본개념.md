@@ -199,6 +199,11 @@ $ docker build -t web-server-build .
 $ docker run -p 8888:8000 --name web-server web-server-build
 ```
 
+### 도커 이미지 레이어
+도커 이미지는 '레이어'로 구성된다.
+
+참고) [도커 이미지 레이어](https://www.44bits.io/ko/post/building-docker-image-basic-commit-diff-and-dockerfile#%EB%8F%84%EC%BB%A4-%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%9D%98-%EB%A0%88%EC%9D%B4%EC%96%B4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0)
+
 ## 참고
 [https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/](https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/)
 [https://docs.docker.com/engine/reference/run/](https://docs.docker.com/engine/reference/run/)
