@@ -204,6 +204,27 @@ $ docker run -p 8888:8000 --name web-server web-server-build
 
 참고) [도커 이미지 레이어](https://www.44bits.io/ko/post/building-docker-image-basic-commit-diff-and-dockerfile#%EB%8F%84%EC%BB%A4-%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%9D%98-%EB%A0%88%EC%9D%B4%EC%96%B4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0)
 
+### 도커 컴포즈 (docker-compose)
+복잡한 컨테이너의 관계를 명확하게 **문서화** 할 수 있다.
+
+[sample - `docker-compose.yml`](../docker/compose/docker-compose.yml)
+
+```
+docker-compose up
+docker-compose down
+```
+
+- docker-compose 하는 순간에 자동으로 `network` 가 형성된다.
+   - 컨테이너들은 자동으로 해당 `network`에 연결된다.    
+   - 컨테이너에서 **정의한 컨테이너 이름**으로 설정 가능 (ex. `WORDPRESS_DB_HOST: db:3306`) 
+   - `ports` 설정을 통해 외부에서 접근 가능 여부를 설정할 수 있다. (ex. db 접근을 외부에서 막을 수 있다.)
+    
+- `version` : docker compose 버전 정의
+- `services` : 만들고 싶은 컨테이너**들** 정의
+    - 최상단에 정의한 질의어가 **컨테이너 이름**이 된다.
+- `volumes` : 컨테이너를 띄우면 생성되는 **데이터의 유실 방지**를 위해 컨테이너 밖의 호스트의 저장 공간을 따로 정의
+- `depends on` : 컨테이너의 우선 순의 지정 (컨테이너 생성 전에 우선 적으로 생성되어야 할 컨테이너 정의 가능)
+
 ## 참고
 [https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/](https://cultivo-hy.github.io/docker/image/usage/2019/03/14/Docker%EC%A0%95%EB%A6%AC/)
 [https://docs.docker.com/engine/reference/run/](https://docs.docker.com/engine/reference/run/)
